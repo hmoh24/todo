@@ -12,9 +12,8 @@ function pageLoad (){
 
     linkCreator('today', 'Today');
     linkCreator('projects', 'Projects');
-    
-
 }
+
 
 export default pageLoad
 

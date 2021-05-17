@@ -1,3 +1,4 @@
+import toDoObjects from './classToDo.js'
 
 function renderToDo (object){
     const content = document.querySelector('#content');
@@ -25,6 +26,41 @@ function renderToDo (object){
     priorityP.setAttribute('class', 'priorityP');
     priorityP.textContent = object.priority;
     listObject.appendChild(priorityP);
+
+    let deleteButton = document.createElement('button');
+    deleteButton.setAttribute('class', 'toDoDelete');
+    deleteButton.textContent = 'delete';
+    listObject.appendChild(deleteButton);
+    deleteButton.addEventListener('click', function(){
+        content.removeChild(listObject);
+    });
 }
 
-export default renderToDo
+function formListAdd (target){     
+    target.preventDefault();                                                 //to stop form from submitting and refreshing page
+    let formTitle = document.querySelector('#title').value;
+    let formDescription = document.querySelector('#description').value;
+    let formDate = document.querySelector('#date').value;
+    let formPriority = document.querySelector('input[name = priority]:checked').value;
+    let listObject = new toDoObjects(formTitle, formDescription ,formDate, formPriority);
+    renderToDo(listObject);
+    formHolder.style.display = 'none';
+}
+
+function formDisplay (){
+    let formDisplayBtn = document.querySelector('#addToListBtn');
+    formDisplayBtn.addEventListener('click', function(){
+        formHolder.style.display = 'block';
+    })
+}
+
+function formExit (){
+    let formExitBtn = document.querySelector('#deleteForm');
+    formExitBtn.addEventListener('click', function(){
+        formHolder.style.display = 'none';
+    })
+}
+
+
+
+export { renderToDo, formListAdd, formDisplay, formExit }
