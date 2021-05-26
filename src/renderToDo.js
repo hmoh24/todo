@@ -1,3 +1,4 @@
+import { UnsetAdditionalOptions } from 'tapable';
 import toDoObjects from './classToDo.js'
 
 function renderToDo (object){
@@ -35,8 +36,13 @@ function renderToDo (object){
         content.removeChild(listObject);
     });
 }
+let toDoArray = [];
 
-function formListAdd (target){     
+function addToDoArray (obj) {
+    toDoArray.push(obj);
+}
+
+function toDoFormAdd (target){     
     target.preventDefault();                                                 //to stop form from submitting and refreshing page
     let formTitle = document.querySelector('#title').value;
     let formDescription = document.querySelector('#description').value;
@@ -44,6 +50,7 @@ function formListAdd (target){
     let formPriority = document.querySelector('input[name = priority]:checked').value;
     let listObject = new toDoObjects(formTitle, formDescription ,formDate, formPriority);
     renderToDo(listObject);
+    addToDoArray(listObject);
     formHolder.style.display = 'none';
 }
 
@@ -63,4 +70,4 @@ function formExit (){
 
 
 
-export { renderToDo, formListAdd, formDisplay, formExit }
+export { renderToDo, toDoFormAdd, formDisplay, formExit, toDoArray, addToDoArray }
