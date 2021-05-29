@@ -6,7 +6,7 @@ function renderProjectOuter(object) {
 
     let projectDiv = document.createElement('div');
     projectDiv.setAttribute('class', 'projectDiv');
-    content.insertBefore(projectDiv, addProjectDiv);
+    content.appendChild(projectDiv);
 
     let projectDivTitle = document.createElement('h2');
     projectDivTitle.setAttribute('class', 'projectDivTitle');
@@ -22,6 +22,21 @@ function renderProjectOuter(object) {
     projectButton.setAttribute('class', 'projectButton');
     projectButton.textContent = 'Enter';
     projectDiv.appendChild(projectButton);
+
+    let projectDelete = document.createElement('button');
+    projectDelete.setAttribute('class', 'projectDelete');
+    projectDelete.textContent = 'Delete';
+    projectDiv.appendChild(projectDelete);
+    projectDelete.addEventListener('click', function(){
+        content.removeChild(projectDiv);
+        projectArray.splice(projectArray.findIndex(object => object.title === object.title), 1);
+    })
+}
+
+let projectArray = [];
+
+function addToProjectArray (obj){
+    projectArray.push(obj);
 }
 
 function projectFormDisplay(){
@@ -51,4 +66,4 @@ function projectFormExit(){
 }
 
 
-export {renderProjectOuter, newProjectDisplay, projectFormDisplay, projectFormExit}
+export {projectArray, addToProjectArray, renderProjectOuter, newProjectDisplay, projectFormDisplay, projectFormExit}

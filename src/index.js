@@ -3,11 +3,12 @@ import toDoObjects from './classToDo.js'
 import { renderToDo, toDoFormAdd, formDisplay, formExit, toDoArray, addToDoArray } from './renderToDo.js'
 import projectPageLoad from './projectPageLoad.js'
 import Project from './classProject.js'
-import {renderProjectOuter, newProjectDisplay, projectFormDisplay, projectFormExit} from './renderProjectOuter.js'
+import {projectArray, addToProjectArray, renderProjectOuter, newProjectDisplay, projectFormDisplay, projectFormExit} from './renderProjectOuter.js'
 import todayPageLoad from './todayPageLoad.js'
+
+
+
 pageLoad();
-
-
 
 let page;
 console.log(page);
@@ -16,12 +17,17 @@ const projectsButton = document.querySelector('#projects');
 projectsButton.addEventListener('click', ()=>{
     page = 'projects';
     projectPageLoad();
-    let projectExample1 = new Project('Example', 'Blah, blah, blah');
-    renderProjectOuter(projectExample1);
-    let projectExample2 = new Project('Example2', 'Blah, blah, blah');
-    renderProjectOuter(projectExample2);
-    
+    console.log(projectArray);
 })
+
+let projectExample1 = new Project('Example', 'Blah, blah, blah');
+let projectExample2 = new Project('Example2', 'Blah, blah, blah');
+
+addToProjectArray(projectExample1);
+addToProjectArray(projectExample2);
+
+
+
 
 const todayButton = document.querySelector('#today');
 todayButton.addEventListener('click', ()=>{
@@ -59,6 +65,7 @@ projectForm.addEventListener('submit', function(event){
     newProjectDisplay(event);
 })
 
+projectFormDisplay();
 projectFormExit();
 
 

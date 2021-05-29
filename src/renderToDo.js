@@ -34,6 +34,7 @@ function renderToDo (object){
     listObject.appendChild(deleteButton);
     deleteButton.addEventListener('click', function(){
         content.removeChild(listObject);
+        toDoArray.splice(toDoArray.findIndex(object => object.title === object.title), 1);
     });
 }
 let toDoArray = [];
@@ -41,6 +42,8 @@ let toDoArray = [];
 function addToDoArray (obj) {
     toDoArray.push(obj);
 }
+
+
 
 function toDoFormAdd (target){     
     target.preventDefault();                                                 //to stop form from submitting and refreshing page

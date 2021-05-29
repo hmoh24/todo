@@ -2,17 +2,26 @@ import { renderToDo, toDoArray } from "./renderToDo.js";
 
 
 function todayPageLoad(){
-    let content = document.querySelector('#content');
+    const content = document.querySelector('#content');
     content.style.display = 'flex';
     content.style.flexDirection = 'column';
     content.innerHTML = '';
 
-    let header1 = document.querySelector('h2');
+    const header1 = document.querySelector('h2');
     header1.textContent = 'Today';
 
     for (let i=0; i<toDoArray.length; i++){
         renderToDo(toDoArray[i]);
-    }
+    };
+
+    const addToListButton = document.querySelector('#addToListBtn');
+    addToListButton.style.display = 'block';
+
+    const addProjectDiv = document.querySelector('#addProjectDiv');
+    addProjectDiv.style.display = 'none';
+
+    // let addProjectDiv = document.querySelector('#addProjectDiv');
+    // addProjectDiv.style.display = 'none';
 
 }
 
