@@ -5,7 +5,7 @@ import projectPageLoad from './projectPageLoad.js'
 import Project from './classProject.js'
 import {projectArray, addToProjectArray, renderProjectOuter, newProjectDisplay, projectFormDisplay, projectFormExit} from './renderProjectOuter.js'
 import todayPageLoad from './todayPageLoad.js'
-
+import {renderSublink, deleteSublinkIndex} from  './projectSublinks.js'
 
 
 pageLoad();
@@ -17,23 +17,21 @@ const projectsButton = document.querySelector('#projects');
 projectsButton.addEventListener('click', ()=>{
     page = 'projects';
     projectPageLoad();
-    console.log(projectArray);
 })
 
 let projectExample1 = new Project('Example', 'Blah, blah, blah');
-let projectExample2 = new Project('Example2', 'Blah, blah, blah');
+let projectExample2 = new Project('Anything', 'Blah, blah, blahhhh');
 
 addToProjectArray(projectExample1);
 addToProjectArray(projectExample2);
 
-
+renderSublink(projectArray);
 
 
 const todayButton = document.querySelector('#today');
 todayButton.addEventListener('click', ()=>{
     page = 'today';
     todayPageLoad();
-    console.log(toDoArray);
 })
 
 let object1 = new toDoObjects('Shopping', 'need to buy groceries', '3rd March', 'high');

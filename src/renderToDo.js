@@ -1,40 +1,41 @@
 import { UnsetAdditionalOptions } from 'tapable';
 import toDoObjects from './classToDo.js'
+import { findArrayViaDom } from './renderProjectOuter.js'
 
 function renderToDo (object){
     const content = document.querySelector('#content');
 
-    let listObject = document.createElement('div');
+    const listObject = document.createElement('div');
     listObject.setAttribute('class', 'listObject');
     content.appendChild(listObject);
 
-    let titleP = document.createElement('p');
+    const titleP = document.createElement('p');
     titleP.setAttribute('class', 'titleP');
     titleP.textContent = object.title;
     listObject.appendChild(titleP);
 
-    let descP = document.createElement('p');
+    const descP = document.createElement('p');
     descP.setAttribute('class', 'descP');
     descP.textContent = object.desc;
     listObject.appendChild(descP);
 
-    let dateP = document.createElement('p');
+    const dateP = document.createElement('p');
     dateP.setAttribute('class', 'dateP');
     dateP.textContent = object.date;
     listObject.appendChild(dateP);
 
-    let priorityP = document.createElement('p');
+    const priorityP = document.createElement('p');
     priorityP.setAttribute('class', 'priorityP');
     priorityP.textContent = object.priority;
     listObject.appendChild(priorityP);
 
-    let deleteButton = document.createElement('button');
+    const deleteButton = document.createElement('button');
     deleteButton.setAttribute('class', 'toDoDelete');
     deleteButton.textContent = 'delete';
     listObject.appendChild(deleteButton);
     deleteButton.addEventListener('click', function(){
         content.removeChild(listObject);
-        toDoArray.splice(toDoArray.findIndex(object => object.title === object.title), 1);
+        toDoArray.splice(findArrayViaDom(toDoArray, titleP), 1);
     });
 }
 let toDoArray = [];

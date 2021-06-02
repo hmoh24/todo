@@ -19,10 +19,6 @@ function todayPageLoad(){
 
     const addProjectDiv = document.querySelector('#addProjectDiv');
     addProjectDiv.style.display = 'none';
-
-    // let addProjectDiv = document.querySelector('#addProjectDiv');
-    // addProjectDiv.style.display = 'none';
-
 }
 
 export default todayPageLoad;

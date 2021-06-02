@@ -1,5 +1,6 @@
 import {projectArray, renderProjectOuter} from "./renderProjectOuter.js"
 
+
 function projectPageLoad(){
     let content = document.querySelector('#content');
     content.style.display = 'flex';
@@ -18,6 +19,9 @@ function projectPageLoad(){
     for (let i=0; i<projectArray.length; i++){
         renderProjectOuter(projectArray[i]);
     };
+
+    
+    
 }
 
 export default projectPageLoad;
