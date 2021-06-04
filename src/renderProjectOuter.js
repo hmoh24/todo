@@ -1,5 +1,6 @@
 import Project from './classProject.js'
 import {renderSublink, deleteSublinkIndex} from './projectSublinks.js'
+import loadProjectInner from './loadProjectInnerPage.js'
 
 
 function findArrayViaDom (array, object){
@@ -12,9 +13,6 @@ function findArrayViaDom (array, object){
 
 function renderProjectOuter(object) {
     const content = document.querySelector('#content');
-    const sidebar = document.querySelector('#sideBar');
-    const addProjectDiv = document.querySelector('#addProjectDiv');
-
     const projectDiv = document.createElement('div');
     projectDiv.setAttribute('class', 'projectDiv');
     content.appendChild(projectDiv);
@@ -33,6 +31,9 @@ function renderProjectOuter(object) {
     projectButton.setAttribute('class', 'projectButton');
     projectButton.textContent = 'Enter';
     projectDiv.appendChild(projectButton);
+    projectButton.addEventListener('click', function(){
+        loadProjectInner(projectDivTitle.textContent);
+    })
 
     const projectDelete = document.createElement('button');
     projectDelete.setAttribute('class', 'projectDelete');

@@ -53,6 +53,7 @@ function toDoFormAdd (target){
     let formDate = document.querySelector('#date').value;
     let formPriority = document.querySelector('input[name = priority]:checked').value;
     let listObject = new toDoObjects(formTitle, formDescription ,formDate, formPriority);
+    console.log(listObject);
     renderToDo(listObject);
     addToDoArray(listObject);
     formHolder.style.display = 'none';

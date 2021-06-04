@@ -6,27 +6,12 @@ import Project from './classProject.js'
 import {projectArray, addToProjectArray, renderProjectOuter, newProjectDisplay, projectFormDisplay, projectFormExit} from './renderProjectOuter.js'
 import todayPageLoad from './todayPageLoad.js'
 import {renderSublink, deleteSublinkIndex} from  './projectSublinks.js'
-
+import loadProjectInner from './loadProjectInnerPage.js'
 
 pageLoad();
 
 let page;
 console.log(page);
-
-const projectsButton = document.querySelector('#projects');
-projectsButton.addEventListener('click', ()=>{
-    page = 'projects';
-    projectPageLoad();
-})
-
-let projectExample1 = new Project('Example', 'Blah, blah, blah');
-let projectExample2 = new Project('Anything', 'Blah, blah, blahhhh');
-
-addToProjectArray(projectExample1);
-addToProjectArray(projectExample2);
-
-renderSublink(projectArray);
-
 
 const todayButton = document.querySelector('#today');
 todayButton.addEventListener('click', ()=>{
@@ -46,9 +31,33 @@ addToDoArray(object1);
 addToDoArray(object2);
 
 
+const projectsButton = document.querySelector('#projects');
+projectsButton.addEventListener('click', ()=>{
+    page = 'projects';
+    projectPageLoad();
+})
+
+let defaultProject = new Project('Default', 'For all projects occuring today');
+let projectExample1 = new Project('Example', 'Blah, blah, blah');
+let projectExample2 = new Project('Anything', 'Blah, blah, blahhhh');
+
+addToProjectArray(defaultProject);
+addToProjectArray(projectExample1);
+addToProjectArray(projectExample2);
+
+renderSublink(projectArray);
+
+const sidebar = document.querySelector('#sideBar').children;
+for (let i=2; i<sidebar.length; i++){
+    sidebar[i].addEventListener('click', function(e){
+        loadProjectInner(e.target.textContent);
+    })
+};
+
+
+
 
 let form = document.querySelector('#form');
-let formHolder = document.querySelector('#formHolder');
 form.addEventListener('submit', function(event){
     toDoFormAdd(event);
     console.log(toDoArray)
@@ -57,7 +66,6 @@ form.addEventListener('submit', function(event){
 formDisplay();
 formExit();
 
-let projectFormHolder = document.querySelector('#projectFormHolder');
 let projectForm = document.querySelector('#projectForm');
 projectForm.addEventListener('submit', function(event){
     newProjectDisplay(event);
