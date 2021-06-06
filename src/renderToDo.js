@@ -38,12 +38,31 @@ function renderToDo (object){
         toDoArray.splice(findArrayViaDom(toDoArray, titleP), 1);
     });
 }
+
 let toDoArray = [];
 
 function addToDoArray (obj) {
     toDoArray.push(obj);
 }
 
+function updateFormSelectOptions (array){
+    let select = document.getElementById('projectOptions');
+    let titleProjectArray = [];
+    array.forEach((item)=> titleProjectArray.push(item.title));
+    for (let i=0; i<titleProjectArray.length; i++){
+        select.options[select.options.length] = new Option(titleProjectArray[i], titleProjectArray[i]);
+    }
+}
+
+function deleteSelectOption (name){
+    let select = document.getElementById('projectOptions');
+    let selectOption = document.querySelector('option[value="' + name + '"]');
+    select.removeChild(selectOption);
+    console.log(select);
+    console.log(name);
+    console.log(selectOption);
+
+}
 
 
 function toDoFormAdd (target){     
@@ -52,7 +71,8 @@ function toDoFormAdd (target){
     let formDescription = document.querySelector('#description').value;
     let formDate = document.querySelector('#date').value;
     let formPriority = document.querySelector('input[name = priority]:checked').value;
-    let listObject = new toDoObjects(formTitle, formDescription ,formDate, formPriority);
+    let formProject = document.querySelector('#projectOptions').value;
+    let listObject = new toDoObjects(formTitle, formDescription ,formDate, formPriority, formProject);
     console.log(listObject);
     renderToDo(listObject);
     addToDoArray(listObject);
@@ -75,4 +95,4 @@ function formExit (){
 
 
 
-export { renderToDo, toDoFormAdd, formDisplay, formExit, toDoArray, addToDoArray }
+export { renderToDo, toDoFormAdd, formDisplay, formExit, toDoArray, addToDoArray, updateFormSelectOptions, deleteSelectOption }

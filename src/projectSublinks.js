@@ -24,6 +24,7 @@ function renderSublink (array){
             sidebar.appendChild(sublink);
         }
     }
+    
     else {
         for (let i=0; i<filteredArray.length; i++ ){
             const sublink = document.createElement('button'); //doesn't work for duplicate project names, must make funciton in form

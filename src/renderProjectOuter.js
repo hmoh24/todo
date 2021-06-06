@@ -1,6 +1,7 @@
 import Project from './classProject.js'
 import {renderSublink, deleteSublinkIndex} from './projectSublinks.js'
 import loadProjectInner from './loadProjectInnerPage.js'
+import { deleteSelectOption, updateFormSelectOptions } from './renderToDo.js'
 
 
 function findArrayViaDom (array, object){
@@ -40,6 +41,7 @@ function renderProjectOuter(object) {
     projectDelete.textContent = 'Delete';
     projectDiv.appendChild(projectDelete);
     projectDelete.addEventListener('click', function(){
+        deleteSelectOption(object.title);
         content.removeChild(projectDiv);
         deleteSublinkIndex(projectArray, findArrayViaDom(projectArray, projectDivTitle), sideBar )
         projectArray.splice(findArrayViaDom(projectArray, projectDivTitle), 1);
@@ -71,6 +73,7 @@ function newProjectDisplay(target) {
     addToProjectArray(projectObject)
     projectFormHolder.style.display = 'none';
     renderSublink(projectArray);
+    updateFormSelectOptions(projectArray);
 }
 
 function projectFormExit(){

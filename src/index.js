@@ -1,6 +1,6 @@
 import pageLoad from '../src/pageLoad.js'
 import toDoObjects from './classToDo.js'
-import { renderToDo, toDoFormAdd, formDisplay, formExit, toDoArray, addToDoArray } from './renderToDo.js'
+import { renderToDo, toDoFormAdd, formDisplay, formExit, toDoArray, addToDoArray, updateFormSelectOptions } from './renderToDo.js'
 import projectPageLoad from './projectPageLoad.js'
 import Project from './classProject.js'
 import {projectArray, addToProjectArray, renderProjectOuter, newProjectDisplay, projectFormDisplay, projectFormExit} from './renderProjectOuter.js'
@@ -17,6 +17,7 @@ const todayButton = document.querySelector('#today');
 todayButton.addEventListener('click', ()=>{
     page = 'today';
     todayPageLoad();
+    renderSublink(projectArray);
 })
 
 let object1 = new toDoObjects('Shopping', 'need to buy groceries', '3rd March', 'high');
@@ -46,6 +47,8 @@ addToProjectArray(projectExample1);
 addToProjectArray(projectExample2);
 
 renderSublink(projectArray);
+
+updateFormSelectOptions(projectArray);
 
 const sidebar = document.querySelector('#sideBar').children;
 for (let i=2; i<sidebar.length; i++){

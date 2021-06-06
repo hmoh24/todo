@@ -1,6 +1,6 @@
 
 class toDoObjects {
-    constructor(title, desc, date, priority, project='default') {
+    constructor(title, desc, date, priority, project='Default') {
         this.title = title;
         this.desc = desc;
         this.date = date;
