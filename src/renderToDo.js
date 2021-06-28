@@ -46,11 +46,20 @@ function addToDoArray (obj) {
 }
 
 function updateFormSelectOptions (array){
-    let select = document.getElementById('projectOptions');
+    const select = document.getElementById('projectOptions');
     let titleProjectArray = [];
     array.forEach((item)=> titleProjectArray.push(item.title));
-    for (let i=0; i<titleProjectArray.length; i++){
-        select.options[select.options.length] = new Option(titleProjectArray[i], titleProjectArray[i]);
+    if (select.childElementCount === 0) {
+        for (let i=0; i<titleProjectArray.length; i++){
+            select.options[select.options.length] = new Option(titleProjectArray[i], titleProjectArray[i]);
+        }
+    }
+    else {
+        const sidebar = document.querySelector('#sideBar');
+        let textContentDOMArray = [];
+        let elements = Array.from(sidebar.children);
+        elements.forEach((element)=> textContentDOMArray.push(element.textContent));
+        select.options[select.options.length] = new Option(elements[elements.length - 1].textContent, elements[elements.length - 1].textContent);
     }
 }
 
@@ -61,9 +70,7 @@ function deleteSelectOption (name){
     console.log(select);
     console.log(name);
     console.log(selectOption);
-
 }
-
 
 function toDoFormAdd (target){     
     target.preventDefault();                                                 //to stop form from submitting and refreshing page

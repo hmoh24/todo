@@ -55,6 +55,7 @@ function addToProjectArray (obj){
     projectArray.push(obj);
 }
 
+
 function projectFormDisplay(){
     let projectFormHolder = document.querySelector('#projectFormHolder');
     let addProjectDiv = document.querySelector('#addProjectDiv');
