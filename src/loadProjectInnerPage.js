@@ -10,9 +10,11 @@ function loadProjectInner (name){
     header1.textContent = name;
     console.log(toDoArray[0].project);
 
-    for (let i=0; i<toDoArray.length; i++){
-        if (toDoArray[i].project === name){
-            renderToDo(toDoArray[i]);
+    let sortedToDo = toDoArray.slice().sort((a,b) => a.date - b.date);
+    console.log(sortedToDo);
+    for (let i=0; i<sortedToDo.length; i++){
+        if (sortedToDo[i].project === name){
+            renderToDo(sortedToDo[i]);
         }
     }
 }

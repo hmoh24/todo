@@ -1,6 +1,7 @@
 import { UnsetAdditionalOptions } from 'tapable';
 import toDoObjects from './classToDo.js'
 import { findArrayViaDom } from './renderProjectOuter.js'
+import parseISO from 'date-fns/parseISO';
 
 function renderToDo (object){
     const content = document.querySelector('#content');
@@ -21,7 +22,7 @@ function renderToDo (object){
 
     const dateP = document.createElement('p');
     dateP.setAttribute('class', 'dateP');
-    dateP.textContent = object.date;
+    dateP.textContent = object.date.toLocaleDateString('en-UK');
     listObject.appendChild(dateP);
 
     const priorityP = document.createElement('p');
@@ -77,11 +78,12 @@ function toDoFormAdd (target){
     let formTitle = document.querySelector('#title').value;
     let formDescription = document.querySelector('#description').value;
     let formDate = document.querySelector('#date').value;
+    let parsedFormDate = parseISO(formDate);
     let formPriority = document.querySelector('input[name = priority]:checked').value;
     let formProject = document.querySelector('#projectOptions').value;
-    let listObject = new toDoObjects(formTitle, formDescription ,formDate, formPriority, formProject);
+    let listObject = new toDoObjects(formTitle, formDescription ,parsedFormDate, formPriority, formProject);
     console.log(listObject);
-    renderToDo(listObject);
+;    renderToDo(listObject);
     addToDoArray(listObject);
     formHolder.style.display = 'none';
 }

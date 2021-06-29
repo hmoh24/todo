@@ -1,4 +1,6 @@
 import { renderToDo, toDoArray } from "./renderToDo.js";
+import isToday from 'date-fns/isToday';
+import isDate from 'date-fns/isDate';
 
 
 function todayPageLoad(){
@@ -11,7 +13,10 @@ function todayPageLoad(){
     header1.textContent = 'Today';
 
     for (let i=0; i<toDoArray.length; i++){
-        renderToDo(toDoArray[i]);
+        if (isToday(toDoArray[i].date)){
+            renderToDo(toDoArray[i]);
+            console.log('today');
+        }
     };
 
     const addToListButton = document.querySelector('#addToListBtn');
