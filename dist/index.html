@@ -7,12 +7,15 @@
   <body>
     <h1>Listify</h1>
     <div id='contentHolder'>
-      <h2 id='pageTitle'>Today</h2>
+      <div id='titleHolder'><h2 id='pageTitle'>Today</h2></div>
       <button id='addToListBtn'>+</button>
       <button id='addProjectDiv'>+</button>
       <div id='content'></div>
     </div>
-    <div id='sideBar'></div>
+    <div id='sideBar'>
+      <button id='today' class='buttonLinks'><img src='/src/calendar.svg' class='icons' id='todayIcon'>Today</button>
+      <button id='projects' class='buttonLinks'><img src='/src/briefing.svg' class='icons'>Projects</button>
+    </div>
 
     <div id='formHolder'>
       <button id='deleteForm'>X</button>

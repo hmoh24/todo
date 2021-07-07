@@ -4,19 +4,21 @@ function pageLoad (){
 
     const sidebar = document.querySelector('#sideBar');
 
-    function linkCreator(id, text){
-        let buttonlink = document.createElement('button');
-        buttonlink.setAttribute('id', id);
-        buttonlink.setAttribute('class', 'buttonLinks');
-        buttonlink.textContent = text;
-        sidebar.appendChild(buttonlink);
-    }
+    // function linkCreator(id, text){
+    //     let buttonlink = document.createElement('button');
+    //     buttonlink.setAttribute('id', id);
+    //     buttonlink.setAttribute('class', 'buttonLinks');
+    //     buttonlink.textContent = text;
+    //     sidebar.appendChild(buttonlink);
+    // }
 
-    linkCreator('today', 'Today');
-    linkCreator('projects', 'Projects');
+    // linkCreator('today', 'Today');
+    // linkCreator('projects', 'Projects');
     
     const addProjectDiv = document.querySelector('#addProjectDiv');
     addProjectDiv.style.display = 'none';
+
+
 
 }
 

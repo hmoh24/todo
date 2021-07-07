@@ -25,6 +25,7 @@ function renderSublink (array){
             const sublink = document.createElement('button');
             sublink.textContent = array[i].title;
             sidebar.appendChild(sublink);
+            sublink.setAttribute('class','sublinks');
             sublink.addEventListener('click', function(){
                 loadProjectInner(sublink.textContent);
             })
@@ -36,6 +37,7 @@ function renderSublink (array){
             const sublink = document.createElement('button'); //doesn't work for duplicate project names, must make function in form
             sublink.textContent = filteredArray[i];
             sidebar.appendChild(sublink);
+            sublink.setAttribute('class','sublinks');
             sublink.addEventListener('click', function(){
                 loadProjectInner(sublink.textContent);
             })
