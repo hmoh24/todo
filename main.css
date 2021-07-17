@@ -99,7 +99,6 @@ h1 {
     grid-column: 2/3;
     justify-self: center;
     font-style: italic;
-    font-size: 50px;
 }
 
 #sideBar {
@@ -137,13 +136,11 @@ h1 {
   height: auto;
   width: 50vw;
   background-color: transparent;
-  margin-top: 60px;
 }
 #formHolder {
     height: 300px;
-    width: 600px;
-    /* background-color: #eb5e28; */
-    background:linear-gradient(#eb5e28, rgba(255,139,0,1) 100%);
+    width: 300px;
+    background-color: white ;
     visibility: visible;
     box-shadow: 0px 0px 10px rgb(177, 175, 175);
     padding: 15px;
@@ -157,29 +154,20 @@ h1 {
     z-index: 99;
 }
 
-#deleteForm {
-  position:absolute;
-  right: 5px;
-  top: 5px;
-}
-
 #titleHolder {
-  background: red;
+  background: transparent;
+  border: blue;
   width: inherit;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   top: 0;
   position: absolute;
   left: 0;
-  height: 60px;
+  height: auto;
   padding-left: 10px;
-  display: flex;
-  align-items: center;
 }
-
 h2 {
-    color: rgb(255, 255, 255);
-    font-size: 30px;
+    color: rgb(41, 40, 40)
 }
 
 .buttonLinks {
@@ -190,8 +178,7 @@ h2 {
     font-size: 30px;
     padding: 0px;
     border: none;
-    margin-left: 40px;
-    display:flex;
+    margin-left: 15px;
 };
 
 .buttonLinks:hover {
@@ -213,12 +200,7 @@ h2 {
     background-color: transparent;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 6fr 2fr 2fr 1fr;
-    margin-top: 5px;
-    border-left: 3px red solid;
-}
-
-p::first-letter {
-  text-transform:capitalize;
+    
 }
 
 .titleP {
@@ -230,7 +212,7 @@ p::first-letter {
 
 .descP {
     font-size: 15px;
-    color: rgb(99, 98, 98);
+    color: rgb(165, 135, 115);
     grid-row: 2/3;
     grid-column: 1/2;
 }
@@ -297,8 +279,7 @@ p::first-letter {
   border: none;
   color: white;
   font-style: italic;
-  margin-left: 36px;
-  display:flex;
+  margin-left: 15px;
 }
 
 #sideBar button:nth-of-type(3){
@@ -322,20 +303,4 @@ p::first-letter {
 
 #todayIcon {
   width: 30px;
-}
-
-#addToListBtn {
-  position: absolute;
-  right: 10px;
-  top : 10px;
-  border-radius: 100%;
-  height: 40px;
-  width: 40px;
-  color: white;
-  background-color: #eb5e28;
-  border-style: solid;
-}
-
-#addToListBtn:hover {
-  background-color: #e99878;
 }
