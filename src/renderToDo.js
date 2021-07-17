@@ -32,7 +32,7 @@ function renderToDo (object){
 
     const deleteButton = document.createElement('button');
     deleteButton.setAttribute('class', 'toDoDelete');
-    deleteButton.textContent = 'Delete';
+    deleteButton.textContent = 'delete';
     listObject.appendChild(deleteButton);
     deleteButton.addEventListener('click', function(){
         content.removeChild(listObject);

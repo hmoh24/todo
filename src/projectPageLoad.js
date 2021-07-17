@@ -20,9 +20,7 @@ function projectPageLoad(){
         renderProjectOuter(projectArray[i]);
     };
 
-    const titleHolder = document.querySelector('#titleHolder');
-    titleHolder.style.background = 'blue';
-
+    
     
 }
 

@@ -19,9 +19,6 @@ function todayPageLoad(){
         }
     };
 
-    const titleHolder = document.querySelector('#titleHolder');
-    titleHolder.style.background = 'red';
-
     const addToListButton = document.querySelector('#addToListBtn');
     addToListButton.style.display = 'block';
 

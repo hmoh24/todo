@@ -17,11 +17,6 @@ function loadProjectInner (name){
             renderToDo(sortedToDo[i]);
         }
     }
-    const addToListButton = document.querySelector('#addToListBtn');
-    addToListButton.style.display = 'block';
-
-    const addProjectDiv = document.querySelector('#addProjectDiv');
-    addProjectDiv.style.display = 'none';
 }
 
 export default loadProjectInner;
