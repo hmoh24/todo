@@ -12,13 +12,14 @@ import loadProjectInner from './loadProjectInnerPage.js'
 pageLoad();
 
 let page;
-console.log(page);
+console.log(page); 
 
 const todayButton = document.querySelector('#today');
 todayButton.addEventListener('click', ()=>{
     page = 'today';
     todayPageLoad();
     renderSublink(projectArray);
+    projectFormHolder.style.display ='none'
 })
 
 let object1 = new toDoObjects('Shopping', 'need to buy groceries', new Date(Date.now()), 'high');
@@ -37,11 +38,12 @@ const projectsButton = document.querySelector('#projects');
 projectsButton.addEventListener('click', ()=>{
     page = 'projects';
     projectPageLoad();
+    formHolder.style.display ='none';
 })
 
-let defaultProject = new Project('Default', 'For all projects occuring today');
-let projectExample1 = new Project('Example', 'Blah, blah, blah');
-let projectExample2 = new Project('Anything', 'Blah, blah, blahhhh');
+const defaultProject = new Project('Default', 'For all projects occuring today');
+const projectExample1 = new Project('Example', 'Blah, blah, blah');
+const projectExample2 = new Project('Anything', 'Blah, blah, blahhhh');
 
 addToProjectArray(defaultProject);
 addToProjectArray(projectExample1);
@@ -59,9 +61,7 @@ for (let i=2; i<sidebar.length; i++){
 };
 
 
-
-
-let form = document.querySelector('#form');
+const form = document.querySelector('#form');
 form.addEventListener('submit', function(event){
     toDoFormAdd(event);
     console.log(toDoArray)
@@ -70,7 +70,8 @@ form.addEventListener('submit', function(event){
 formDisplay();
 formExit();
 
-let projectForm = document.querySelector('#projectForm');
+
+const projectForm = document.querySelector('#projectForm');
 projectForm.addEventListener('submit', function(event){
     newProjectDisplay(event);
 })

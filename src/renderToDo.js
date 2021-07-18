@@ -38,6 +38,19 @@ function renderToDo (object){
         content.removeChild(listObject);
         toDoArray.splice(findArrayViaDom(toDoArray, titleP), 1);
     });
+
+    if (object.priority === 'high'){
+        listObject.style.borderLeft = '3px red solid';
+    }
+
+    if (object.priority === 'medium'){
+        listObject.style.borderLeft = '3px orange solid';
+    }
+
+    if (object.priority === 'low'){
+        listObject.style.borderLeft = '3px yellow solid';
+    }
+
 }
 
 let toDoArray = [];

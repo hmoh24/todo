@@ -21,35 +21,40 @@
       <button id='deleteForm'>X</button>
       <h2>Add To Your List</h2>
       <form id='form'>
+        <span id='titleSpan'>
           <label for='title'>Title:</label><br>
           <input type='title' id='title' name='title' required><br>
-          
+        </span>
+        <span id='descriptionSpan'>  
           <label for='description'>Description:</label><br>
           <input type='description' id='description' name='description' required><br>
-
+        </span>
+        <span id='selectSpan'>
           <label for='projectOptions'>Project:</label><br>
           <select name='projects' id='projectOptions' required>
           </select><br>
-
+        </span>
+        <span id='dateSpan'>  
           <label for='date'>Date:</label><br>
           <input type='date' id='date' name='date' required><br>
-          
-          <label id='priorityCheckbox'>Priority:</label>
+        </span>
+        <span id='radioSpan'>  
+          <label id='priorityCheckbox'>Priority:</label><br>
           <label for='high'>
               High
               <input type='radio' id='high' name='priority' value='high'>
           </label>
-
+         
           <label for='medium'>
               Medium
               <input type='radio' id='medium' name ='priority' value='medium'>
           </label>
-
+         
           <label for='low'>
             Low
             <input type='radio' id='low' name ='priority' value='low'>
           </label><br>
-        
+        </span>
           <input type='submit' id='formSubmit' type='button'></input>
       </form>
     </div>
