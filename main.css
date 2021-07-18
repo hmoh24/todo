@@ -140,7 +140,7 @@ h1 {
   margin-top: 60px;
 }
 #formHolder {
-    height: 300px;
+    height: 250px;
     width: 600px;
     /* background-color: #eb5e28; */
     background:linear-gradient(#eb5e28, rgba(255,139,0,1) 100%);
@@ -151,10 +151,58 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     top: 250px;
-    left: 0;
+    left: 14rem;
     right: 0;
     display: none;
     z-index: 99;
+}
+
+#titleSpan{
+  position:absolute;
+  left: 1rem;
+  top: 4rem;
+}
+
+#descriptionSpan{
+  position:absolute;
+  right: 1rem;
+  top: 4rem;
+}
+
+#selectSpan{
+  position:absolute;
+  left: 1rem;
+  top: 8rem;
+}
+
+#dateSpan{
+  position:absolute;
+  right: 1rem;
+  top: 8rem;
+}
+
+#radioSpan{
+  position:absolute;
+  left: 10.5rem;
+  top: 8rem;
+}
+
+#formSubmit{
+  position:absolute;
+  bottom: 1rem;
+  left: 12.5rem;
+  border-radius: 15px;
+  border: none;
+  width: 200px;
+  height: 35px;
+}
+
+#formSubmit:active {
+  background-color: rgb(216, 212, 212);
+}
+
+label {
+  color: white;
 }
 
 #deleteForm {
@@ -215,6 +263,7 @@ h2 {
     grid-template-columns: 6fr 2fr 2fr 1fr;
     margin-top: 5px;
     border-left: 3px red solid;
+    padding-left: .25rem;
 }
 
 p::first-letter {
@@ -266,19 +315,25 @@ p::first-letter {
 }
 
 #addProjectDiv {
-  /* height: 250px;
-  width: 200px;
-  background-color: #ffffff;
-  border: 3px solid #eb5e28;
-  border-radius: 10%;
-  font-size: 100px;
-  margin: 10px; */
+  position: absolute;
+  right: 10px;
+  top : 10px;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  color: #eb5e28;
+  background-color: white;
+  border: 1px solid #eb5e28
+}
+
+input[type=submit]:hover{
+  background-color: rgb(185, 185, 185);;
 }
 
 #projectFormHolder {
-    height: 300px;
-    width: 300px;
-    background-color: white ;
+    height: 250px;
+    width: 270px;
+    background:linear-gradient(#eb5e28, rgba(255,139,0,1) 100%);
     visibility: visible;
     box-shadow: 0px 0px 10px rgb(177, 175, 175);
     padding: 15px;
@@ -286,10 +341,30 @@ p::first-letter {
     margin-left: auto;
     margin-right: auto;
     top: 250px;
-    left: 0;
+    left: 15rem;
     right: 0;
     display: none;
     z-index: 99;
+}
+
+#deleteProjectForm{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+
+#projectFormSubmit{
+  margin-top:1rem;
+  border-radius: 15px;
+  border: none;
+  width: 200px;
+  height: 35px;
+  margin-left: 1.25rem;
+}
+
+#projectFormSubmit:active {
+  background-color: rgb(216, 212, 212);
 }
 
 .sublinks {
