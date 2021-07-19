@@ -22,9 +22,12 @@ function loadProjectInner (name){
 
     const addProjectDiv = document.querySelector('#addProjectDiv');
     addProjectDiv.style.display = 'none';
-    
+
     const projectFormHolder = document.querySelector('#projectFormHolder');
     projectFormHolder.style.display ='none'
+
+    const titleHolder = document.querySelector('#titleHolder');
+    titleHolder.style.background = 'Green';
 }
 
 export default loadProjectInner;

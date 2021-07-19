@@ -70,11 +70,20 @@ form.addEventListener('submit', function(event){
 formDisplay();
 formExit();
 
-
 const projectForm = document.querySelector('#projectForm');
 projectForm.addEventListener('submit', function(event){
+    const projectTitle = document.querySelector('#projectTitle').value;
+    let x=true;
+    console.log(projectArray.length);
+    for (let i=0;i<projectArray.length;i++){
+        if (projectTitle === projectArray[i].title ){
+            event.preventDefault();
+            alert('No duplicate project titles permitted');
+            return false;
+        }
+    }
     newProjectDisplay(event);
-})
+});
 
 projectFormDisplay();
 projectFormExit();
