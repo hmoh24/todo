@@ -18,7 +18,7 @@ function renderProjectOuter(object) {
     projectDiv.setAttribute('class', 'projectDiv');
     content.appendChild(projectDiv);
 
-    const projectDivTitle = document.createElement('h2');
+    const projectDivTitle = document.createElement('h3');
     projectDivTitle.setAttribute('class', 'projectDivTitle');
     projectDivTitle.textContent = object.title
     projectDiv.appendChild(projectDivTitle);
