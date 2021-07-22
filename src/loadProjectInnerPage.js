@@ -27,7 +27,7 @@ function loadProjectInner (name){
     projectFormHolder.style.display ='none'
 
     const titleHolder = document.querySelector('#titleHolder');
-    titleHolder.style.background = 'Green';
+    titleHolder.style.background = '#C028EB';
 }
 
 export default loadProjectInner;

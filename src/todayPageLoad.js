@@ -20,7 +20,7 @@ function todayPageLoad(){
     };
 
     const titleHolder = document.querySelector('#titleHolder');
-    titleHolder.style.background = 'red';
+    titleHolder.style.background = '#28B5EB';
 
     const addToListButton = document.querySelector('#addToListBtn');
     addToListButton.style.display = 'block';

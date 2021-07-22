@@ -21,7 +21,7 @@ function projectPageLoad(){
     };
 
     const titleHolder = document.querySelector('#titleHolder');
-    titleHolder.style.background = 'blue';
+    titleHolder.style.background = '#54EB28';
 
     
 }

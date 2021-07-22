@@ -22,11 +22,11 @@ todayButton.addEventListener('click', ()=>{
     projectFormHolder.style.display ='none'
 })
 
-let object1 = new toDoObjects('Shopping', 'need to buy groceries', new Date(Date.now()), 'high');
+let object1 = new toDoObjects('Coding', 'Finish To-Do Project', new Date(Date.now()), 'high');
 console.log(object1);
 renderToDo(object1);
 
-let object2 = new toDoObjects('Go gym', 'leg day', new Date(Date.now()), 'high');
+let object2 = new toDoObjects('Go to gym', 'Leg day', new Date(Date.now()), 'medium');
 console.log(object2);
 renderToDo(object2);
 
@@ -41,9 +41,9 @@ projectsButton.addEventListener('click', ()=>{
     formHolder.style.display ='none';
 })
 
-const defaultProject = new Project('Default', 'For all projects occuring today');
-const projectExample1 = new Project('Example', 'Blah, blah, blah');
-const projectExample2 = new Project('Anything', 'Blah, blah, blahhhh');
+const defaultProject = new Project('Default', 'For all tasks occuring today');
+const projectExample1 = new Project('Example', 'Exemplify');
+const projectExample2 = new Project('Example V2', 'Ample Example');
 
 addToProjectArray(defaultProject);
 addToProjectArray(projectExample1);

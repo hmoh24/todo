@@ -25,10 +25,10 @@ function renderToDo (object){
     dateP.textContent = object.date.toLocaleDateString('en-UK');
     listObject.appendChild(dateP);
 
-    const priorityP = document.createElement('p');
-    priorityP.setAttribute('class', 'priorityP');
-    priorityP.textContent = object.priority;
-    listObject.appendChild(priorityP);
+    const projectP = document.createElement('p');
+    projectP.setAttribute('class', 'projectP');
+    projectP.textContent = object.project;
+    listObject.appendChild(projectP);
 
     const deleteButton = document.createElement('button');
     deleteButton.setAttribute('class', 'toDoDelete');
