@@ -77,7 +77,7 @@ select {
 
 html {
     background-color: #fffcf2;
-    background-image: url('/src/patternBackground.jpg');
+    background-image: url('patternBackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
