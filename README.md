@@ -1,4 +1,5 @@
-# To-Do Project (Listify)
+# To-Do Project (Listify) 
+Live link: https://hmoh24.github.io/todo/
 
 This is the 7th javascript project from theodinproject curriculum (https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/todo-list).
 
